@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio CGI</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Meu Portfolio</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Explorando os Limites da <span>Imaginação Digital</span></h2>
+                    <p>Portfólio de trabalhos com Inteligência Artificial</p>
+                    <a href="#gallery" class="btn">Ver Galeria</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2 class="section-title">Galeria de Trabalhos</h2>
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- As imagens serão carregadas via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Sobre mim</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Profissional com foco em tecnologias disruptivas e estratégicas. Minha atuação e estudo se dividem entre a vanguarda da Inteligência Artificial Generativa e a segurança da Tecnologia Blockchain.</p>
+                        <p>No campo da IA, tenho experiência prática em Engenharia de Prompts para criação de conteúdo multimídia consistente (imagens, vídeos e personagens). </p>
+                        <p>Dedico-me à criação de Agentes de IA customizados (Gems do Google Gemini) para automatizar tarefas específicas.</p>
+                    </div>
+                    <div class="skills">
+                        <h3>Habilidades</h3>
+                        <ul>
+                            <li>Engenharia de Prompts</li>
+                            <li>Personagens consistentes</li>
+                            <li>AI Video Making</li>
+                            <li>AI Image Generation</li>
+                            <li>AI Sounds and Musics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="contact-content">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Informações de Contato</h3>
+                        <p>Email: seuemail@exemplo.com</p>
+                        <p>Telefone: (xx) xxxxx-xxxx</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Artstation</a>
+                            <a href="#" class="social-link">LinkedIn</a>
+                            <a href="#" class="social-link">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 AI Artwork Portfolio. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal para visualização de imagem -->
+    <div class="modal" id="image-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img src="" alt="" id="modal-image">
+            <div class="image-info">
+                <h3 id="image-title"></h3>
+                <p id="image-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
