@@ -146,54 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observar elementos para animação
-    document.querySelectorAll('.gallery-item, .about-content, .contact-content').forEach(el => {
+    document.querySelectorAll('.gallery-item').forEach(el => {
         observer.observe(el);
     });
 });
-
-// Adicionar estilos CSS para animações
-const style = document.createElement('style');
-style.textContent = `
-    .gallery-item, .about-content, .contact-content {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s, transform 0.5s;
-    }
-    
-    .gallery-item.animate-in, .about-content.animate-in, .contact-content.animate-in {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .nav.active {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--secondary-color);
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    }
-    
-    .nav.active ul {
-        flex-direction: column;
-    }
-    
-    .nav.active li {
-        margin: 10px 0;
-    }
-    
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-`;
-document.head.appendChild(style);
