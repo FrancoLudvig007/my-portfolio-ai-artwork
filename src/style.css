@@ -108,52 +108,29 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), 
-                url('../images/1.png') no-repeat center center/cover;
-    margin-top: 70px;
+/* Intro Section (substitui o hero) */
+.intro {
+    padding: 150px 0 80px;
+    text-align: center;
+    background-color: var(--background-light);
 }
 
-.hero-content {
-    max-width: 700px;
-}
-
-.hero h2 {
-    font-size: 3.5rem;
+.intro h2 {
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
-.hero h2 span {
+.intro h2 span {
     color: var(--primary-color);
 }
 
-.hero p {
+.intro p {
     font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: var(--primary-dark);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Section Titles */
@@ -177,8 +154,8 @@ body {
 
 /* Gallery Section */
 .gallery {
-    padding: 100px 0;
-    background-color: var(--background-light);
+    padding: 80px 0;
+    background-color: var(--background-dark);
 }
 
 .gallery-grid {
@@ -193,8 +170,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
     background-color: var(--card-bg);
+    cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -242,7 +220,8 @@ body {
 
 /* About Section */
 .about {
-    padding: 100px 0;
+    padding: 80px 0;
+    background-color: var(--background-light);
 }
 
 .about-content {
@@ -282,8 +261,8 @@ body {
 
 /* Contact Section */
 .contact {
-    padding: 100px 0;
-    background-color: var(--background-light);
+    padding: 80px 0;
+    background-color: var(--background-dark);
 }
 
 .contact-content {
@@ -337,6 +316,23 @@ body {
 
 .social-link:hover {
     text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
 }
 
 /* Footer */
@@ -412,8 +408,8 @@ body {
 
 /* Responsividade */
 @media (max-width: 992px) {
-    .hero h2 {
-        font-size: 2.8rem;
+    .intro h2 {
+        font-size: 2.2rem;
     }
     
     .about-content,
@@ -432,8 +428,12 @@ body {
         display: flex;
     }
     
-    .hero h2 {
-        font-size: 2.2rem;
+    .intro {
+        padding: 120px 0 60px;
+    }
+    
+    .intro h2 {
+        font-size: 2rem;
     }
     
     .gallery-grid {
@@ -446,7 +446,7 @@ body {
 }
 
 @media (max-width: 576px) {
-    .hero h2 {
+    .intro h2 {
         font-size: 1.8rem;
     }
     
@@ -458,4 +458,48 @@ body {
         width: 95%;
         margin: 10% auto;
     }
+}
+
+/* Animações para os elementos da galeria */
+.gallery-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.gallery-item.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para o menu mobile ativo */
+.nav.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active ul {
+    flex-direction: column;
+}
+
+.nav.active li {
+    margin: 10px 0;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
