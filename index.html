@@ -3,123 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio CGI</title>
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Portfolio IA - Franco Ludvig</title>
+    https://fonts.googleapis.com/css2?family=Ubuntu&display=swap
+    src/style.css
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>CGI Portfolio</h1>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#gallery">Galeria</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+    <header>
+        <nav>
+            <ul>
+                <li>#homeHome</a></li>
+                <li>#fotosGaleria de Fotos</a></li>
+                <li>#videosGaleria de Vídeos</a></li>
+                <li>#contatoContato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <section class="intro">
-            <div class="container">
-                <div class="intro-content">
-                    <h2>Explorando os Limites da <span>Imaginação Digital</span></h2>
-                    <p>Portfólio de trabalhos em CGI, modelagem 3D e efeitos visuais</p>
-                </div>
-            </div>
-        </section>
+    <section id="home" class="home">
+        <h1>Franco Ludvig</h1>
+        <p>Artista de Inteligência Artificial | Criando imagens e vídeos únicos com IA</p>
+    </section>
 
-        <section id="gallery" class="gallery">
-            <div class="container">
-                <h2 class="section-title">Galeria de Trabalhos</h2>
-                <div class="gallery-grid" id="gallery-grid">
-                    <!-- As imagens serão carregadas via JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">Sobre o Artista</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Artista digital especializado em CGI, com experiência em modelagem 3D, texturização, iluminação e composição. Trabalhando com ferramentas como Blender, Maya, Substance Painter e Photoshop.</p>
-                        <p>Meu objetivo é criar imagens que contem histórias e transportem o espectador para mundos além da imaginação.</p>
-                    </div>
-                    <div class="skills">
-                        <h3>Habilidades</h3>
-                        <ul>
-                            <li>Modelagem 3D</li>
-                            <li>Texturização e Shading</li>
-                            <li>Iluminação e Renderização</li>
-                            <li>Composição e Pós-produção</li>
-                            <li>Animação e Efeitos Visuais</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Entre em Contato</h2>
-                <div class="contact-content">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Seu e-mail" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Enviar Mensagem</button>
-                    </form>
-                    <div class="contact-info">
-                        <h3>Informações de Contato</h3>
-                        <p>Email: seuemail@exemplo.com</p>
-                        <p>Telefone: (11) 99999-9999</p>
-                        <div class="social-links">
-                            <a href="#" class="social-link">Artstation</a>
-                            <a href="#" class="social-link">LinkedIn</a>
-                            <a href="#" class="social-link">Instagram</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 CGI Portfolio. Todos os direitos reservados.</p>
+    <section id="fotos" class="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="grid" id="fotoGrid">
+            <!-- Cards de imagens serão inseridos via JS -->
         </div>
-    </footer>
+    </section>
 
-    <!-- Modal para visualização de imagem -->
-    <div class="modal" id="image-modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <img src="" alt="" id="modal-image">
-            <div class="image-info">
-                <h3 id="image-title"></h3>
-                <p id="image-description"></p>
-            </div>
+    <section id="videos" class="galeria">
+        <h2>Galeria de Vídeos</h2>
+        <div class="grid" id="videoGrid">
+            <!-- Cards de vídeos serão inseridos via JS -->
         </div>
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Modal para ampliar imagem/vídeo -->
+    <div id="modal" class="modal">
+        <span id="closeModal">&times;</span>
+        <div id="modalContent"></div>
     </div>
 
-    <script src="src/script.js"></script>
+    src/scripts.js</script>
 </body>
 </html>
