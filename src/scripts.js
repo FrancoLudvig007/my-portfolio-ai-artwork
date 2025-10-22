@@ -1,40 +1,48 @@
-const fotoGrid = document.getElementById('fotoGrid');
-const videoGrid = document.getElementById('videoGrid');
+const photoGallery = document.getElementById('photoGallery');
+const videoGallery = document.getElementById('videoGallery');
 const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modalContent');
 const closeModal = document.getElementById('closeModal');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
 
 // Carregar imagens
 for (let i = 1; i <= 30; i++) {
-    const card = document.createElement('div');
-    card.className = 'card';
-    const img = document.createElement('img');
-    img.src = `images/${i}.png`;
-    card.appendChild(img);
-    card.onclick = () => openModal(`images/${i}.png`);
-    fotoGrid.appendChild(card);
+  const imgCard = document.createElement('div');
+  imgCard.className = 'card';
+  imgCard.innerHTML = `<img src="Images/${i}.png" alt="Imagem IA ${i}" loading="lazy" />`;
+  imgCard.onclick = () => openModal(`<img src="Images/${i}.png" alt="Imagem IA ${i}" />`);
+  photoGallery.appendChild(imgCard);
+
+  const videoCard = document.createElement('div');
+  videoCard.className = 'card';
+  videoCard.innerHTML = `<video src="Videos/${i}.mp4" muted preload="metadata"></video>`;
+  videoCard.onclick = () => openModal(`<video src="Videos/${i}.mp4" autoplay controls></video>`);
+  videoGallery.appendChild(videoCard);
 }
 
-// Carregar vídeos
-for (let i = 1; i <= 30; i++) {
-    const card = document.createElement('div');
-    card.className = 'card';
-    const video = document.createElement('video');
-    video.src = `videos/${i}.mp4`;
-    video.muted = true;
-    video.loop = true;
-    video.autoplay = true;
-    card.appendChild(video);
-    card.onclick = () => openModal(`<video src="videos/${i}.mp4" controls autoplay></video>`);
-
-}
-
+// Modal
 function openModal(content) {
-    modalContent.innerHTML = content;
-    modal.classList.add('active');
+  modalContent.innerHTML = content;
+  modal.classList.remove('hidden');
 }
 
 closeModal.onclick = () => {
-    modal.classList.remove('active');
+  modal.classList.add('hidden');
+  modalContent.innerHTML = '';
+};
+
+window.onclick = (e) => {
+  if (e.target === modal) {
+    modal.classList.add('hidden');
     modalContent.innerHTML = '';
+  }
+};
+
+// Scroll para o topo
+window.onscroll = () => {
+  scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+};
+
+scrollTopBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 };
