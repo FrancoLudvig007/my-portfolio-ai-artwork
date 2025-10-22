@@ -1,59 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio IA - Franco Ludvig</title>
-    https://fonts.googleapis.com/css2?family=Ubuntu&display=swap
-    src/style.css
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio IA - Franco</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li>#homeHome</a></li>
-                <li>#fotosGaleria de Fotos</a></li>
-                <li>#videosGaleria de Vídeos</a></li>
-                <li>#contatoContato</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="home">
-        <h1>Franco Ludvig</h1>
-        <p>Artista de Inteligência Artificial | Criando imagens e vídeos únicos com IA</p>
-    </section>
-
-    <section id="fotos" class="galeria">
-        <h2>Galeria de Fotos</h2>
-        <div class="grid" id="fotoGrid">
-            <!-- Cards de imagens serão inseridos via JS -->
-        </div>
-    </section>
-
-    <section id="videos" class="galeria">
-        <h2>Galeria de Vídeos</h2>
-        <div class="grid" id="videoGrid">
-            <!-- Cards de vídeos serão inseridos via JS -->
-        </div>
-    </section>
-
-    <section id="contato" class="contato">
-        <h2>Contato</h2>
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <!-- Modal para ampliar imagem/vídeo -->
-    <div id="modal" class="modal">
-        <span id="closeModal">&times;</span>
-        <div id="modalContent"></div>
+  <header>
+    <div class="banner-overlay">
+      <h1>Franco Ludvig — AI Artist / Prompt Engineer</h1>
+      <div class="descricao">
+        <p>No campo da IA, tenho experiência prática em Engenharia de Prompts para criação de conteúdo multimídia consistente (imagens, vídeos e personagens).</p>
+        <p>Dedico-me à criação de Agentes de IA customizados (Gems do Google Gemini) para automatizar tarefas específicas.</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#galeria-fotos">Galeria de Fotos</a></li>
+          <li><a href="#galeria-videos">Galeria de Vídeos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    src/scripts.js</script>
+  <section id="galeria-fotos" class="gallery-section">
+    <h2>Galeria de Fotos</h2>
+    <div class="gallery" id="photoGallery"></div>
+  </section>
+
+  <section id="galeria-videos" class="gallery-section">
+    <h2>Galeria de Vídeos</h2>
+    <div class="gallery" id="videoGallery"></div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required />
+      <input type="email" placeholder="Seu e-mail" required />
+      <textarea placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <div id="modal" class="modal hidden">
+    <span id="closeModal">&times;</span>
+    <div id="modalContent"></div>
+  </div>
+
+  <button id="scrollTopBtn" title="Voltar ao topo">↑</button>
+
+  <script src="src/scripts.js"></script>
 </body>
 </html>
